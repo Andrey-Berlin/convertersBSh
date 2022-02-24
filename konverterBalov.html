@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    
+  </head>
+  <body id="body">
+    
+    
+    <script src = "https://andrey-berlin.github.io/JSmoduls/tagBasic.js">
+    </script>
+    <script>
+    let section = document.getElementById("section");
+    section.innerHTML = `
+<form>
+
+    <label for="fname">Сколько баллов вы накопили?:</label><br>
+
+    <input type="text" id ="inPut" placeholder="Введите, пожалуйста, баллы...">
+    <button type="button" id = "butTon">Перевести в Шекели</button>
+</form>
+
+<p id="text">
+
+</p>
+    
+    `;
+    let style = document.getElementById('style');
+
+        style.innerHTML = `
+
+ 
+body {
+
+    text-align: center;
+    font-size: 25px;
+
+
+}
+
+#text {
+
+    margin: 5% auto;
+
+}
+ `;
+ let button = document.getElementById("butTon");
+
+button.onclick = function() {
+
+
+let input = document.getElementById('inPut').value;
+let shek = 0.2;
+let text = document.getElementById('text');
+text.innerHTML = "У вас: " + input * 0.2 + " Шекелей";
+
+ 
+}
+ 
+    </script>
+    
+  </body>
+</html>
