@@ -54,7 +54,22 @@ button.onclick = function() {
 let input = document.getElementById('inPut').value;
 let shek = 0.2;
 let text = document.getElementById('text');
-text.innerHTML = "У вас: " + input * 0.2 + " Шекелей";
+
+if (input > 100 ) {
+  
+text.style.color = "#0db82b";
+text.style.background = "#9aa26f";
+text.innerHTML = "У вас: " + input * shek + " Шекелей. <br>ПОЗДРАВЛЯЕМ!<br>Вы можете тратить деньги.";
+
+} 
+
+else {
+  
+ text.style.color = "#e70202";
+ text.style.background = "#040404";
+ text.innerHTML = "У вас: " + input * shek + " Шекелей. <br> STOP!<br> Вы еще не можете тратить деньги!"; 
+  }
+
 
  
 }
