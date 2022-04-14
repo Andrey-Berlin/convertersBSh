@@ -17,7 +17,7 @@
     section.innerHTML = `
     <form>
 
-    <label for="fname">Сколько баллов вы накопили?: </label><br>
+    <label for="fname"> Сколько баллов вы накопили?: </label><br>
 
     <input type="text" id ="inPut" placeholder="Введите, пожалуйста, баллы...">
     <button type="button" id = "butTon">Перевести в Шекели</button>
@@ -26,6 +26,8 @@
 <p id="text">
 
 </p>
+
+ <div id = "blog"> </div>
     
     `;
     let style = document.getElementById('style');
@@ -46,6 +48,26 @@ body {
     margin: 5% auto;
 
 }
+
+div {
+          
+          margin: 0px 20px 0px 20px;
+         /* border: 1px solid #4CAF50*/
+      
+    }
+    
+    ol {
+     font-family: Lucida Console; 
+     font-size: 25px;
+     
+      
+    }
+    li {
+      font-family: Arial;
+      font-size: 22px;
+      
+      
+    }
  `;
  let button = document.getElementById("butTon");
 
@@ -64,7 +86,16 @@ text.innerHTML = "У вас: " + input * shek + " Шекелей. <br>ПОЗДР
 
 } 
 
-else {
+else if (input >= 700||input>=600||input==500){
+  
+text.style.color = "#f7e326";
+text.style.background = "#2a2719";
+text.innerHTML = "У вас: " + input * shek + " Шекелей. <br>ВЫ ПРОСТО МОЛОДЕЦ!<br>Скоро вы  сможете тратить деньги.";
+  
+  
+}
+
+else{
   
  text.style.color = "#e70202";
  text.style.background = "#040404";
@@ -74,6 +105,14 @@ else {
 
  
 }
+
+getText("https://andrey-berlin.github.io/blog_postyk_rostyk/blog.txt");
+      async function getText(file){
+        let x = await fetch(file);
+        let y = await x.text();
+        let blog = document.getElementById("blog");
+       blog.innerHTML = y;
+      }
  
     </script>
     
